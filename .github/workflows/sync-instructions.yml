@@ -1,0 +1,44 @@
+name: Sync Instructions
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Every Monday at 6am UTC
+  workflow_dispatch:        # Allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Fetch latest JavaScript instructions
+        run: |
+          mkdir -p .github
+          curl -fsSL https://raw.githubusercontent.com/leorsv/instructions-platform/main/instructions/javascript.md \
+            -o /tmp/javascript.md
+
+      - name: Write copilot-instructions.md
+        run: |
+          cat > .github/copilot-instructions.md <<EOF
+          # JavaScript Project — Copilot Instructions
+
+          > **Auto-synced from instructions-platform.**
+          > Source: \`https://raw.githubusercontent.com/leorsv/instructions-platform/main/instructions/javascript.md\`
+          > Last synced: $(date -u +"%Y-%m-%d %H:%M UTC")
+
+          ---
+
+          EOF
+          cat /tmp/javascript.md >> .github/copilot-instructions.md
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/copilot-instructions.md
+          git diff --cached --quiet || git commit -m "chore: sync instructions from instructions-platform"
+          git push
