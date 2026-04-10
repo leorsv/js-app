@@ -2,7 +2,7 @@
 # Fetches the latest JavaScript instructions from the instructions-platform and
 # writes them into .github/copilot-instructions.md so Copilot picks them up.
 
-$sourceUrl = "https://raw.githubusercontent.com/leorsv/instructions-platform/main/instructions/javascript.md"
+$sourceUrl = "https://raw.githubusercontent.com/leorsv/instructions-platform/master/instructions/javascript.md"
 $outputPath = ".github/copilot-instructions.md"
 
 Write-Host "Fetching instructions from $sourceUrl ..."

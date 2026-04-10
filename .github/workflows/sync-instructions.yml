@@ -18,7 +18,7 @@ jobs:
       - name: Fetch latest JavaScript instructions
         run: |
           mkdir -p .github
-          curl -fsSL https://raw.githubusercontent.com/leorsv/instructions-platform/main/instructions/javascript.md \
+          curl -fsSL https://raw.githubusercontent.com/leorsv/instructions-platform/master/instructions/javascript.md \
             -o /tmp/javascript.md
 
       - name: Write copilot-instructions.md
