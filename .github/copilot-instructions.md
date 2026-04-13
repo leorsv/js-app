@@ -1,11 +1,11 @@
-﻿# JavaScript Project â€” Copilot Instructions
+# JavaScript Project — Copilot Instructions
 
 > **Auto-synced from instructions-platform.**
-> Source: `https://raw.githubusercontent.com/leorsv/instructions-platform/master/instructions/javascript.md`
-> Last synced: 2026-04-10 16:00
-> Run `./sync-instructions.ps1` to pull the latest.
+> Source: `https://raw.githubusercontent.com/leorsv/instructions-platform/main/instructions/javascript.md`
+> Last synced: 2026-04-13 07:47 UTC
 
 ---
+
 # JavaScript Instructions
 
 ## Lint
@@ -17,4 +17,3 @@
 ## Best Practices
 - Avoid global variables
 - Use async/await instead of callbacks
-
