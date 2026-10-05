@@ -2,7 +2,7 @@
 
 > **Auto-synced from instructions-platform.**
 > Source: `https://raw.githubusercontent.com/leorsv/instructions-platform/main/instructions/javascript.md`
-> Last synced: 2026-09-28 12:18 UTC
+> Last synced: 2026-10-05 12:58 UTC
 
 ---
 
